@@ -1,0 +1,33 @@
+name: Populate issues from draft
+on:
+  issues:
+    types: [ opened ]
+
+jobs:
+  populate_issue:
+    runs-on: ubuntu-latest
+    if: github.event.issue.body == null || github.event.issue.body == ''
+    steps:
+      - name: Update Issue Body
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const body = `### 🎯 Objective
+            Provide a clear and concise description of the feature or task to be implemented.
+            
+            ### 📝 Definition of Done (DoD)
+              - [ ] **Implementation**: Code follows the modular architecture (ES6 Modules).
+              - [ ] **Testing**: Feature verified in the browser console; no errors or warnings.
+              - [ ] **Code Quality**: Self-review performed; comments added to complex logic.
+              - [ ] **Version Control**: Changes committed with descriptive messages and pushed to the repository.
+
+            ### 🛠️ Technical Notes
+            **Affected Modules**: \`js/modules/...\`
+            **Tools**: Built-in Web Server for module testing.`;
+            
+            github.rest.issues.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: body
+            })
