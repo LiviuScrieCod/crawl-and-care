@@ -1,16 +1,76 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <!--  technical metadata  -->
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Crawl&Care</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#0f0f10">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <!--  SEO & discovery  -->
+    <title>Crawl & Care - TTRPG Digital Pet</title>
+    <meta name="title" content="Crawl & Care - TTRPG Digital Pet">
+    <meta name="description"
+          content="Embark on a pocket-sized adventure. Hatch, train, and explore dungeons with your unique digital companion in a D&D-inspired world.">
+    <meta name="keywords" content="TTRPG, RPG, Digital Pet, Tamagotchi, D&D, Browser Game, Dungeon Crawl, d20">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="MaFomedanu">
+    <!--    <link rel="canonical" href="https://nume.github.io/crawl-and-care/">-->
+
+    <!--  social & presence  -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-game-link.com/">
+    <meta property="og:title" content="Crawl & Care - TTRPG Digital Pet">
+    <meta property="og:description"
+          content="Embark on a pocket-sized adventure. Hatch, train, and explore dungeons with your unique digital companion in a D&D-inspired world.">
+    <!--    <meta property="og:image" content="assets/images/og-preview.png">-->
+
+    <!--  external resources  -->
+    <!--  FONTS  -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Press+Start+2P&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet">
+
+    <!--  local resources -->
     <!--  CSS  -->
     <link rel="stylesheet" href="css/main.css">
+    <!--    <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">-->
+    <!--    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">-->
 </head>
 <body>
+<a href="#game-canvas" class="skip-link">Skip to game</a>
+<div id="toast-container" aria-live="polite" aria-atomic="true"></div>
+<div id="app-wrapper">
+    <header id="main-header">
+        <h1 class="title">Crawl & Care</h1>
+        <nav id="top-nav">
+            <button id="toggle-journal-btn" aria-expanded="false" aria-controls="dungeon-log">Expedition log</button>
+        </nav>
+    </header>
+    <main id="game-device">
+        <section id="device-area">
+            <div class="device-shell">
+                <div id="screen">
+                    <canvas id="game-canvas">Lorem ipsum</canvas>
+                </div>
+            </div>
+        </section>
+        <aside id="dungeon-log" class="hidden">
+            <header class="log-header">
+                <h3>Expedition Log</h3>
+            </header>
+            <div id="log-entries"></div>
+        </aside>
+    </main>
+</div>
 
-<script src="js/main.js"></script>
+<script type="module" src="js/main.js"></script>
 </body>
 </html>
